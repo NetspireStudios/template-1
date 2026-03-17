@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Company Name | Professional Cleaning Services</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1173d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        html { scroll-behavior: smooth; }
+        #mobile-menu.transitioning { transition: opacity 0.2s ease; }
+        @media (max-width: 768px) {
+            a, button { -webkit-tap-highlight-color: rgba(17, 115, 212, 0.2); }
+        }
+        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; }
+        .mobile-services-open .mobile-chevron { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<!-- Header & Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<a href="#" class="flex items-center gap-2 scroll-top">
+<div class="bg-primary p-2 rounded-lg">
+<span class="material-symbols-outlined text-white">auto_awesome</span>
+</div>
+<span class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Company Name</span>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<div class="dropdown relative">
+<button type="button" class="text-sm font-semibold hover:text-primary transition-colors flex items-center gap-1">
+Services <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+</button>
+<div class="dropdown-menu absolute top-full left-0 pt-2 py-2 w-48 bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-slate-200 dark:border-slate-700 opacity-0 invisible transition-all duration-200 z-50">
+<a class="block px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary rounded-t-lg" href="residential.html">Residential Cleaning</a>
+<a class="block px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary" href="commercial.html">Commercial Cleaning</a>
+<a class="block px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary" href="deep-cleaning.html">Deep Cleaning</a>
+<a class="block px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary rounded-b-lg" href="move-in-out.html">Move-in/Move-out</a>
+</div>
+</div>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#about">About</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#reviews">Reviews</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#contact">Contact</a>
+<a class="bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20" href="#contact">Get a Quote</a>
+</nav>
+<button type="button" class="md:hidden p-3 -mr-2 min-w-[44px] min-h-[44px] rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors flex items-center justify-center" id="menu-toggle" aria-label="Toggle menu">
+<span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="fixed inset-0 z-40 md:hidden hidden">
+<div class="fixed inset-0 bg-black/50 backdrop-blur-sm" id="menu-backdrop" aria-hidden="true"></div>
+<nav class="fixed top-0 right-0 w-full max-w-[min(20rem,85vw)] h-full bg-white dark:bg-slate-900 shadow-2xl flex flex-col pt-24 px-6 overflow-y-auto">
+<button type="button" class="absolute top-6 right-6 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800" id="menu-close" aria-label="Close menu">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+<div class="mb-2">
+<button type="button" class="py-4 text-base font-semibold border-b border-slate-200 dark:border-slate-700 w-full text-left flex items-center justify-between mobile-services-toggle">
+Services <svg class="w-5 h-5 flex-shrink-0 transition-transform mobile-chevron" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+</button>
+<div id="mobile-services" class="hidden pl-4 pb-2 border-b border-slate-200 dark:border-slate-700">
+<a class="block py-3 text-slate-600 dark:text-slate-400 hover:text-primary nav-link" href="residential.html">Residential Cleaning</a>
+<a class="block py-3 text-slate-600 dark:text-slate-400 hover:text-primary nav-link" href="commercial.html">Commercial Cleaning</a>
+<a class="block py-3 text-slate-600 dark:text-slate-400 hover:text-primary nav-link" href="deep-cleaning.html">Deep Cleaning</a>
+<a class="block py-3 text-slate-600 dark:text-slate-400 hover:text-primary nav-link" href="move-in-out.html">Move-in/Move-out</a>
+</div>
+</div>
+<a class="py-4 text-base font-semibold border-b border-slate-200 dark:border-slate-700 hover:text-primary transition-colors nav-link" href="#about">About</a>
+<a class="py-4 text-base font-semibold border-b border-slate-200 dark:border-slate-700 hover:text-primary transition-colors nav-link" href="#reviews">Reviews</a>
+<a class="py-4 text-base font-semibold border-b border-slate-200 dark:border-slate-700 hover:text-primary transition-colors nav-link" href="#contact">Contact</a>
+<a class="mt-4 bg-primary text-white px-6 py-3 rounded-lg text-base font-bold text-center hover:bg-primary/90 transition-all nav-link" href="#contact">Get a Quote</a>
+</nav>
+</div>
+<!-- Hero Section -->
+<section class="relative py-12 lg:py-24 overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-8">
+<div class="space-y-4">
+<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-wider uppercase">
+<span class="material-symbols-outlined text-sm">verified</span> Your Tagline Here
+                        </span>
+<h1 class="text-5xl lg:text-7xl font-black text-slate-900 dark:text-white leading-[1.1] tracking-tight">
+                            Your Headline <span class="text-primary">Goes Here</span>
+</h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed">
+                            Your tagline or value proposition. Describe what makes your cleaning company unique and why customers should choose you.
+                        </p>
+</div>
+<div class="flex flex-wrap gap-4">
+<a class="bg-primary text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-primary/90 transition-all shadow-xl shadow-primary/30 flex items-center gap-2" href="#contact">
+                            Get a Free Quote <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<a class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-all" href="#services">
+                            Our Services
+                        </a>
+</div>
+<div class="flex items-center gap-4 pt-4">
+<div class="flex -space-x-3">
+<img class="h-10 w-10 rounded-full border-2 border-white dark:border-slate-900 object-cover" data-alt="Satisfied customer headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS6YhNISQMiTZeDSV93LlT12JwTgF0KnnfEPqlqiZ9cwpZmZO_F5QnHAtwZe4gOfYr0w2Mx5mrasE7HJe130vxUW51_TlXIDoBLxxQL8XY_B20nt1nLBWyoIjcztACypRtnNJZvT8Wi1hvFM1F6zr7C1PXdhtpMLFvGSKkweSG336VvRuPFbhdOA8458Bem2kqbDOkWK90e-bz6o8s9vMz6pzmEpvGyL3l2OjkgnIRQ7jVI9CqnOMeTtRE_YhTKpwB68vfmQEh4fI"/>
+<img class="h-10 w-10 rounded-full border-2 border-white dark:border-slate-900 object-cover" data-alt="Smiling homeowner portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgkJF-SdHo-vEAYZmzTYI4w9LyS3giEQWshJxoveFgRDvRs6iiQw2K4vf_YIdFoerSZsMlQ7APSmVjixDV8AZE84k7SYLhUIegGALkr98sUBIoAkhJLebVM4w3Ek478UAVJF7qzG1FPs2XIrs6MUqG_ZKkvEd_M308qV0Wedxi80k-W85Ff9T_atAc5iow7ghpnMhW3tSbMsH76Rg9AXLzLbFeGC7RxS7afnpdbzHq2wmqaR5JOZ-PDo7Ob6-u1pJKHZkA3O0BHxM"/>
+<img class="h-10 w-10 rounded-full border-2 border-white dark:border-slate-900 object-cover" data-alt="Client testimonial avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyN3fEl6z8lSxePh5_Fk7w8lLyDVxGuUU0MsY1xoX1evJxt086OjmCreHo6DBWEFQdVD4NlLrT4PNK0dOoQp96iOw_KdDni2qRJRNDLnz4KMswckJhQ7BjfLOgj2YDKlj2EYsycKIqm8VjcyM3cxJ_rjLZALXzTgoPY529ZsiVjwaMksfsEFAtYKYrYHfzfHMC-NuaSiG4JaIKJPWZ_Ha6OwdmWXWiGKMv8uwpcPFQ7Ixz8hO0wU0ALLBr6gwXnEtpG0qGeIgHaFg"/>
+</div>
+<div class="text-sm font-medium">
+<div class="flex text-yellow-400"><span class="material-symbols-outlined text-sm">star</span><span class="material-symbols-outlined text-sm">star</span><span class="material-symbols-outlined text-sm">star</span><span class="material-symbols-outlined text-sm">star</span><span class="material-symbols-outlined text-sm">star</span></div>
+<span class="text-slate-500 dark:text-slate-400">XXX+ Happy Clients</span>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-110"></div>
+<img alt="Modern clean living room" class="relative rounded-3xl shadow-2xl object-cover aspect-[4/5] w-full" data-alt="Modern clean living room with bright light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW_2E93HWh6On6CP5-jL4kBAJAh-Qdrfi0rRpHX39yPvfKDG7dBQDIv8wpnqCg6xmbPitWXvcnp5l6SKxiCTYofnMFiwHP1S_9k_sAX7kkmwELzJoG1lD9cBIq14DoiWpImN0Qw3afUl4gFV69-ZgfQRH-ltCYadz14e7jT-L_PfaXhOVLSahk480zg7GxByq7WVeuImMdag59bAogXilob0GiBcvvhINin7E9SUbA2EeJyh4P0YOer3soYLW6v9ODSRC2sFJXD14"/>
+<div class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-3">
+<div class="h-12 w-12 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined font-bold">check_circle</span>
+</div>
+<div>
+<p class="text-xs text-slate-500 uppercase font-bold tracking-widest">Your Badge</p>
+<p class="text-lg font-bold">Your Feature Here</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Bar -->
+<section class="py-12 border-y border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark/50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<p class="text-center text-sm font-bold text-slate-400 dark:text-slate-600 uppercase tracking-widest mb-8">Certifications &amp; Trust Badges</p>
+<div class="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+<span class="font-bold text-xl">IICRC</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">eco</span>
+<span class="font-bold text-xl">EcoLogo</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">security</span>
+<span class="font-bold text-xl">Fully Insured</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">award_star</span>
+<span class="font-bold text-xl">Top Rated 2023</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">workspace_premium</span>
+<span class="font-bold text-xl">BBB A+</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Image Gallery -->
+<section class="py-16 bg-white dark:bg-background-dark/30">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80" alt="Clean living space" class="rounded-2xl object-cover w-full aspect-[4/3] shadow-lg"/>
+<img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80" alt="Professional cleaning service" class="rounded-2xl object-cover w-full aspect-[4/3] shadow-lg"/>
+<img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Spotless office" class="rounded-2xl object-cover w-full aspect-[4/3] shadow-lg"/>
+</div>
+</div>
+</section>
+<!-- Services Grid -->
+<section id="services" class="py-24 scroll-mt-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16 space-y-4">
+<h2 class="text-4xl font-extrabold text-slate-900 dark:text-white">Premium Cleaning Services</h2>
+<p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg">We offer a wide range of cleaning solutions tailored to meet your specific needs, whether at home or in the office.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Residential -->
+<div class="group bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary transition-all hover:shadow-2xl hover:shadow-primary/5">
+<div class="h-16 w-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">home</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Residential Cleaning</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">Complete home care including dusting, vacuuming, and sanitizing all living spaces.</p>
+<a class="text-primary font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all" href="residential.html">Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Commercial -->
+<div class="group bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary transition-all hover:shadow-2xl hover:shadow-primary/5">
+<div class="h-16 w-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">corporate_fare</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Commercial Cleaning</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">Professional janitorial services for offices, retail spaces, and commercial buildings.</p>
+<a class="text-primary font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all" href="commercial.html">Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Deep Cleaning -->
+<div class="group bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary transition-all hover:shadow-2xl hover:shadow-primary/5">
+<div class="h-16 w-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">cleaning_services</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Deep Cleaning</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">Intensive scrub-down for kitchens, bathrooms, and hard-to-reach areas.</p>
+<a class="text-primary font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all" href="deep-cleaning.html">Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Move-in/Move-out -->
+<div class="group bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary transition-all hover:shadow-2xl hover:shadow-primary/5">
+<div class="h-16 w-16 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">local_shipping</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Move-in/Move-out</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">Ensure your old or new home is spotless for a fresh, stress-free start.</p>
+<a class="text-primary font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all" href="move-in-out.html">Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section id="about" class="py-24 bg-slate-900 text-white overflow-hidden scroll-mt-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-12">
+<div class="space-y-4">
+<h2 class="text-4xl font-extrabold tracking-tight">Why Choose <span class="text-primary">Company Name</span>?</h2>
+<p class="text-slate-400 text-lg">Your company description. Highlight what makes you different and why customers should trust you.</p>
+</div>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="flex-shrink-0 h-12 w-12 bg-primary rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined">how_to_reg</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2">Vetted Professionals</h4>
+<p class="text-slate-400">Our team consists of background-checked, highly trained, and bonded cleaning specialists you can trust.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 h-12 w-12 bg-primary rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined">compost</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2">Eco-Friendly Products</h4>
+<p class="text-slate-400">We use non-toxic, biodegradable cleaning solutions that are safe for your family, pets, and the planet.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 h-12 w-12 bg-primary rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2">100% Satisfaction Guarantee</h4>
+<p class="text-slate-400">If you're not absolutely happy with our service, we'll return and re-clean the area at no extra cost.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square bg-primary/20 absolute -top-10 -right-10 rounded-full blur-3xl"></div>
+<div class="relative rounded-3xl overflow-hidden border-8 border-slate-800 shadow-2xl">
+<img alt="Professional cleaner working" class="w-full h-full object-cover" data-alt="Professional cleaner in uniform cleaning kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpYO30rCmCFxUgoHa053Vr1c2GTCtaZZ_ZjACi83EYfiacX1M9g818DqDhjFsFN-coNerdJaYL2GpMMYjpVzaA7xRSyUGPucFCDj8NLQp0FOv8PrA3FAzmfDMJZh1DSY-5edxjsApE95OkAmlqFmnFwUNlrEkj2GQou6m3yUZJoeW9T4GSJFQ9Z6AFoWIxKeoC9g5ueR4n_zrqs-4K0HClGeKHGrTTJi12A9TsS1LdKms0L-rOi1Kc4iChjJm20WAr0hF30dfRIG8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+<div class="absolute bottom-10 left-10">
+<p class="text-5xl font-black text-white">15+</p>
+<p class="text-slate-300 font-bold tracking-widest uppercase text-sm">Years in Business</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section id="reviews" class="py-24 bg-background-light dark:bg-background-dark/30 scroll-mt-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16 space-y-4">
+<h2 class="text-4xl font-extrabold text-slate-900 dark:text-white">What Our Clients Say</h2>
+<p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg">Don't just take our word for it—see why we're the top-rated cleaning service in the city.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
+<div class="flex text-yellow-400 mb-6">
+<span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+</div>
+<p class="text-slate-600 dark:text-slate-300 italic mb-8">"Sample testimonial. Replace with real customer reviews about your cleaning services."</p>
+<div class="flex items-center gap-4">
+<img class="h-12 w-12 rounded-full object-cover" data-alt="Customer avatar Sarah M." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrvS3muxMvu8DjCFZPSq9P_rGtlH27o15hLL5kx8Ra5JuPjClW4lpfuWVrQ-iIrvNJ4i4ov3jh03cLQ3Pze4RIivV_jWBnMlLPIA88cKl7Kfv_zgYF-1kdk9XMpLZWsYpPanI0flXidBpBz5NwVSfckewcKh6XFmCth5mC38fUnVUPV00jS-Wk1DFjzqkBWlarjB8w3KrU-5lOgfeH8JKmLjAWg98_7sKKzzElAYtjKIq8j3VOSa34vjOP5xX-DOKlsuJ3BkFFrLE"/>
+<div>
+<p class="font-bold">David Chen</p>
+<p class="text-xs text-slate-500 uppercase font-bold">Tech Office Manager</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
+<div class="flex text-yellow-400 mb-6">
+<span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+</div>
+<p class="text-slate-600 dark:text-slate-300 italic mb-8">"Sample testimonial. Replace with real customer reviews and feedback about your cleaning services."</p>
+<div class="flex items-center gap-4">
+<img class="h-12 w-12 rounded-full object-cover" data-alt="Customer avatar Emily R." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5bEDmKI8y37KYyVJn1o1nnvT7aVvI_1YhfOlBtAlxUUvBTLEHh7LHGVQLUEHN0DAcLKIoX3uAFGYt4DhEj0s8wJKD6N_YvD-dPWRuVBRg0Gw6yyQgGEOtVxKKei1rlU55nlSkFv7N97vGHw8J__DeQ6LtRjZnYujfFWzTsAEkcPjKjS1hl8ntWage4U8tZUZRfpPG0yetQqQTcjxDD4OFlcHtrB4F3SoFQ5aVdVrmsju9W9WBjwLk-vjqtRoCulhEOiCeh0cQtnE"/>
+<div>
+<p class="font-bold">Sarah Miller</p>
+<p class="text-xs text-slate-500 uppercase font-bold">Homeowner</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
+<div class="flex text-yellow-400 mb-6">
+<span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+</div>
+<p class="text-slate-600 dark:text-slate-300 italic mb-8">"Another sample testimonial. Add your best customer feedback here."</p>
+<div class="flex items-center gap-4">
+<img class="h-12 w-12 rounded-full object-cover" data-alt="Customer avatar Michael T." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq5abBITP7ffbFfIdfaUu0ar_cyAFkUHQiqtSxx5X2eHG93__RpoY8pTTzdZ8J1u0OnkDzxpNZyl-npxFz50P78CZCadWhTdpYcxjcyikzxqB6AJ6MD_RaWe7YQbKolf-hAVPR1puyATw6_cuccOUsH4xcBv7iRU5cdm6UkpeSHCUkCTLN5AoL8onuNwxdJRzEWH6BkWZU0DgxDH3V2yMdlYDboSXWBXRy5zlpL_-TvY1jXG7AuluITbvMNz86-nIHRTdZd0IdwxI"/>
+<div>
+<p class="font-bold">Michael Thompson</p>
+<p class="text-xs text-slate-500 uppercase font-bold">Property Investor</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer id="contact" class="bg-slate-950 text-slate-400 pt-24 pb-12 scroll-mt-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-16">
+<div class="col-span-2">
+<div class="flex items-center gap-2 mb-6">
+<div class="bg-primary p-2 rounded-lg">
+<span class="material-symbols-outlined text-white">auto_awesome</span>
+</div>
+<span class="text-xl font-extrabold tracking-tight text-white">Company Name</span>
+</div>
+<p class="max-w-xs mb-8 leading-relaxed">
+                        Your company description. Brief summary of what you offer and your commitment to customers.
+                    </p>
+<div class="flex gap-4">
+<a class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-white text-xl">social_leaderboard</span>
+</a>
+<a class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-white text-xl">share_location</span>
+</a>
+<a class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-white text-xl">camera</span>
+</a>
+</div>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6">Quick Links</h5>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Home</a></li>
+<li><a class="hover:text-primary transition-colors" href="#services">All Services</a></li>
+<li><a class="hover:text-primary transition-colors" href="#contact">Booking</a></li>
+<li><a class="hover:text-primary transition-colors" href="#about">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#reviews">Reviews</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6">Services</h5>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="residential.html">Residential</a></li>
+<li><a class="hover:text-primary transition-colors" href="commercial.html">Commercial</a></li>
+<li><a class="hover:text-primary transition-colors" href="deep-cleaning.html">Deep Cleaning</a></li>
+<li><a class="hover:text-primary transition-colors" href="move-in-out.html">Move-in/Out</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6">Contact Us</h5>
+<ul class="space-y-4 text-sm">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+<span>Your Address, City, State ZIP</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">phone</span>
+<span>(555) 000-0000</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">mail</span>
+<span>contact@yourcompany.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium">
+<p>© 2024 Company Name. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-white transition-colors" href="#">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+(function() {
+    var menu = document.getElementById('mobile-menu');
+    var toggle = document.getElementById('menu-toggle');
+    var closeBtn = document.getElementById('menu-close');
+    var backdrop = document.getElementById('menu-backdrop');
+    var navLinks = document.querySelectorAll('.nav-link');
+    var svcBtn = document.querySelector('.mobile-services-toggle');
+    var svcPanel = document.getElementById('mobile-services');
+
+    function openMenu() {
+        menu.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+        menu.classList.add('hidden');
+        document.body.style.overflow = '';
+        if (svcPanel) svcPanel.classList.add('hidden');
+        if (svcBtn) svcBtn.classList.remove('mobile-services-open');
+    }
+    function toggleMenu() {
+        if (menu.classList.contains('hidden')) openMenu();
+        else closeMenu();
+    }
+    function toggleServices() {
+        if (svcPanel) {
+            svcPanel.classList.toggle('hidden');
+            if (svcBtn) svcBtn.classList.toggle('mobile-services-open', !svcPanel.classList.contains('hidden'));
+        }
+    }
+
+    if (toggle) toggle.addEventListener('click', toggleMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+    if (backdrop) backdrop.addEventListener('click', closeMenu);
+    if (svcBtn) svcBtn.addEventListener('click', toggleServices);
+    navLinks.forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+        var href = a.getAttribute('href');
+        if (href === '#') return;
+        a.addEventListener('click', function(e) {
+            var target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+})();
+</script>
+</body></html>
